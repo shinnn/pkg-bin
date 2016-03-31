@@ -1,0 +1,35 @@
+{
+  "name": "pkg-bin",
+  "version": "0.1.0",
+  "description": "Get a command name from a package.json object",
+  "repository": "shinnn/pkg-bin",
+  "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+  "scripts": {
+    "pretest": "eslint --config @shinnn/node-legacy --rule 'complexity: [error, 15]' index.js test.js",
+    "test": "node --strong_mode test.js | tap-spec",
+    "coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "pkg",
+    "package",
+    "data",
+    "json",
+    "name",
+    "bin",
+    "command",
+    "cli",
+    "get",
+    "property"
+  ],
+  "devDependencies": {
+    "@shinnn/eslint-config-node-legacy": "^2.0.0",
+    "eslint": "^2.5.3",
+    "istanbul": "^0.4.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.5.1"
+  }
+}
