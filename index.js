@@ -14,6 +14,12 @@ module.exports = function pkgBin(pkgData) {
     );
   }
 
+  if (!('name' in pkgData)) {
+    throw new TypeError(
+      'Expected the package data to have `name` property, but it doesn\'t.'
+    );
+  }
+
   if (typeof pkgData.name !== 'string') {
     throw new TypeError(
       util.inspect(pkgData.name) +

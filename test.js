@@ -32,7 +32,7 @@ test('pkgBin()', t => {
 
   t.throws(
     () => pkgBin({bin: 'cli.js'}),
-    /TypeError.*undefined is not a string\. `name` property of the package data must be a string\./,
+    /TypeError.*Expected the package data to have `name` property, but it doesn't\./,
     'should throw a type error when the object doesn\'t have `name` property.'
   );
 
