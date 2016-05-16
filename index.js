@@ -4,7 +4,7 @@
 */
 'use strict';
 
-var util = require('util');
+const util = require('util');
 
 module.exports = function pkgBin(pkgData) {
   if (!pkgData || typeof pkgData !== 'object' || Array.isArray(pkgData)) {
@@ -32,7 +32,7 @@ module.exports = function pkgBin(pkgData) {
   }
 
   if (pkgData.bin && typeof pkgData.bin === 'object' && !Array.isArray(pkgData.bin)) {
-    var keys = Object.keys(pkgData.bin);
+    const keys = Object.keys(pkgData.bin);
 
     if (keys.length === 0) {
       throw new Error(
