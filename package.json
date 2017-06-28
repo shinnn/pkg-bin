@@ -4,6 +4,7 @@
   "description": "Get a command name from a package.json object",
   "repository": "shinnn/pkg-bin",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
+  "bin": "server.js",
   "scripts": {
     "pretest": "eslint --config @shinnn/node index.js test.js",
     "test": "node test.js | tap-spec",
