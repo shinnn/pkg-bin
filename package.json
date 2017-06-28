@@ -8,7 +8,7 @@
   "scripts": {
     "pretest": "eslint --config @shinnn/node index.js test.js",
     "test": "node test.js | tap-spec",
-    "coverage": "node --strong_mode node_modules/.bin/istanbul cover test.js"
+    "coverage": "istanbul cover test.js"
   },
   "license": "MIT",
   "files": [
