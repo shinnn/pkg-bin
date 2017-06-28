@@ -12,7 +12,8 @@
   },
   "license": "MIT",
   "files": [
-    "index.js"
+    "index.js",
+    "server.js"
   ],
   "keywords": [
     "pkg",
