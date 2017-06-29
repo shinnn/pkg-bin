@@ -12,7 +12,7 @@ if(argv.length < 3)
   process.exit(1)
 }
 
-const result = pkgBin(require(resolve(__dirname, argv[2])))
+const result = pkgBin(require(resolve(process.cwd(), argv[2])))
 if(!result) process.exit(2)
 
 console.log(result)
