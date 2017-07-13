@@ -1,4 +1,4 @@
-'use strong';
+'use strict';
 
 const pkgBin = require('.');
 const test = require('tape');
