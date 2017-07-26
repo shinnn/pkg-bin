@@ -3,7 +3,6 @@
 [![NPM version](https://img.shields.io/npm/v/pkg-bin.svg)](https://www.npmjs.com/package/pkg-bin)
 [![Build Status](https://travis-ci.org/shinnn/pkg-bin.svg?branch=master)](https://travis-ci.org/shinnn/pkg-bin)
 [![Coverage Status](https://img.shields.io/coveralls/shinnn/pkg-bin.svg)](https://coveralls.io/r/shinnn/pkg-bin)
-[![devDependency Status](https://david-dm.org/shinnn/pkg-bin/dev-status.svg)](https://david-dm.org/shinnn/pkg-bin#info=devDependencies)
 
 Get a command name from a [package.json](https://docs.npmjs.com/files/package.json) object
 
@@ -69,6 +68,4 @@ pkgBin({name: 'hi'}); //=> null
 
 ## License
 
-Copyright (c) 2016 [Shinnosuke Watanabe](https://github.com/shinnn)
-
-Licensed under [the MIT License](./LICENSE).
+[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/deed)
