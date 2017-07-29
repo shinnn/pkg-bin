@@ -1,6 +1,6 @@
 {
   "name": "pkg-bin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get a command name from a package.json object",
   "repository": "shinnn/pkg-bin",
   "author": "Shinnosuke Watanabe (https://github.com/shinnn)",
