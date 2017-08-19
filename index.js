@@ -4,27 +4,23 @@
 */
 'use strict';
 
-const util = require('util');
+const inspectWithKind = require('inspect-with-kind');
 
 module.exports = function pkgBin(pkgData) {
   if (!pkgData || typeof pkgData !== 'object' || Array.isArray(pkgData)) {
-    throw new TypeError(
-      util.inspect(pkgData) +
-      ' is not a plain object. Expected a package.json object `{name: ..., version: ..., description: ...}`.'
-    );
+    throw new TypeError(`Expected a package.json object \`{name: ..., version: ..., description: ...}\`, but got ${
+      inspectWithKind(pkgData)
+    }.`);
   }
 
   if (!('name' in pkgData)) {
-    throw new TypeError(
-      'Expected the package data to have `name` property, but it doesn\'t.'
-    );
+    throw new TypeError('Expected the package data to have `name` property, but it doesn\'t.');
   }
 
   if (typeof pkgData.name !== 'string') {
-    throw new TypeError(
-      util.inspect(pkgData.name) +
-      ' is not a string. `name` property of the package data must be a string.'
-    );
+    throw new TypeError(`Expected \`name\` property of the package data to be a string, but it was ${
+      inspectWithKind(pkgData.name)
+    }.`);
   }
 
   if (typeof pkgData.bin === 'string') {
@@ -50,9 +46,9 @@ module.exports = function pkgBin(pkgData) {
 
   if (pkgData.bin !== undefined) {
     throw new TypeError(
-      util.inspect(pkgData.bin) +
-      ' is neither a string nor plain object.' +
-      ' `bin` property must be a map of command name to local file name, or a single file name.'
+      `Expected \`bin\` property to be a map of command name to local file name (object), or a single file name (string), but it was ${
+        inspectWithKind(pkgData.bin)
+      }.`
     );
   }
 

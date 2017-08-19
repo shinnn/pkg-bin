@@ -1,30 +1,30 @@
-'use strong';
+'use strict';
 
 const pkgBin = require('.');
 const test = require('tape');
 
 test('pkgBin()', t => {
-  t.strictEqual(pkgBin.name, 'pkgBin', 'should have a function name.');
+  t.equal(pkgBin.name, 'pkgBin', 'should have a function name.');
 
-  t.strictEqual(
+  t.equal(
     pkgBin({name: 'foo', bin: 'cli.js'}),
     'foo',
     'should return a package name when `bin` property is a local file name.'
   );
 
-  t.strictEqual(
+  t.equal(
     pkgBin({name: 'foo', bin: {hi: 'bin1.js', foo: 'bin2.js'}}),
     'foo',
     'should return a package name when `bin` is an object with a package name entry.'
   );
 
-  t.strictEqual(
+  t.equal(
     pkgBin({name: 'foo', bin: {hi: 'bin1.js', hello: 'bin2.js'}}),
     'hi',
     'should return the first `bin` property name when `bin` is an object.'
   );
 
-  t.strictEqual(
+  t.equal(
     pkgBin({name: 'foo'}),
     null,
     'should return null when package.json doesn\'t have `bin` property.'
@@ -32,7 +32,7 @@ test('pkgBin()', t => {
 
   t.throws(
     () => pkgBin(['Hi']),
-    /TypeError.*\[ 'Hi' \] is not a plain object\. Expected a package\.json object/,
+    /^TypeError.*, but got \[ 'Hi' ] \(array\)\./,
     'should throw a type error when the argument is not a plain object.'
   );
 
@@ -44,13 +44,13 @@ test('pkgBin()', t => {
 
   t.throws(
     () => pkgBin({name: 1, bin: 'cli.js'}),
-    /TypeError.*1 is not a string\. `name` property of the package data must be a string\./,
+    /TypeError.*Expected `name` property of the package data to be a string, but it was 1 \(number\)\./,
     'should throw a type error when `name` property is not a string.'
   );
 
   t.throws(
     () => pkgBin({name: 'foo', bin: null}),
-    /TypeError.*null is neither a string nor plain object\./,
+    /TypeError.*Expected `bin` property to be .*, but it was null\./,
     'should throw a type error when `bin` property is neither a string nor object.'
   );
 
