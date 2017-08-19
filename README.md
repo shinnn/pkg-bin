@@ -27,6 +27,21 @@ pkgBin(pakcageJson); //=> 'my-tool'
 npm install pkg-bin
 ```
 
+## CLI
+
+`pkg-bin` CLI tool accept a path pointing to a `package.json` file (or any json
+file with another name but with the expected fields) and return the name of the
+`bin` executable:
+
+```sh
+pkg-bin cat-me/package.json
+#=> catMe
+```
+
+In case `bin` executable could not be found or there was an error, nothing will
+be printed to `stdout` and exit status will be different from zero to notify
+there was an error.
+
 ## API
 
 ```javascript

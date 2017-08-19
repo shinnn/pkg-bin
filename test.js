@@ -13,6 +13,12 @@ test('pkgBin()', t => {
   );
 
   t.equal(
+    pkgBin({name: 'foo', bin: {hi: 'bin1.js', foo: 'bin2.js'}}),
+    'foo',
+    'should return a package name when `bin` is an object with a package name entry.'
+  );
+
+  t.equal(
     pkgBin({name: 'foo', bin: {hi: 'bin1.js', hello: 'bin2.js'}}),
     'hi',
     'should return the first `bin` property name when `bin` is an object.'

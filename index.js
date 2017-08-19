@@ -37,6 +37,10 @@ module.exports = function pkgBin(pkgData) {
       );
     }
 
+    if (pkgData.bin[pkgData.name]) {
+      return pkgData.name;
+    }
+
     return Object.keys(pkgData.bin)[0];
   }
 
